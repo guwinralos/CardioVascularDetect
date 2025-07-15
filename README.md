@@ -1,77 +1,75 @@
-CardioVascularDetect: Previsão de Risco de Doença Cardíaca com Machine Learning
-Este repositório contém um projeto focado em utilizar Aprendizado de Máquina (Machine Learning) para prever o risco de doenças cardiovasculares. Nosso objetivo é desenvolver e avaliar modelos preditivos que possam auxiliar profissionais da saúde no diagnóstico precoce e na identificação de pacientes em alto risco.
+# 🫀 CardioVascularDetect: Previsão de Risco de Doença Cardíaca com Machine Learning
 
-🎯 Objetivo do Projeto
-As doenças cardiovasculares são uma das principais causas de mortalidade global. A prevenção e o diagnóstico precoce são ferramentas essenciais para a saúde pública. Este projeto visa aplicar algoritmos de Machine Learning para analisar dados clínicos e prever se um paciente tem um alto risco de desenvolver uma doença cardíaca, oferecendo assim uma ferramenta de apoio robusta para decisões clínicas.
+Este repositório contém um projeto voltado para o uso de **Machine Learning** na previsão de **riscos de doenças cardiovasculares**. O objetivo é desenvolver modelos preditivos que auxiliem profissionais da saúde na **identificação precoce de pacientes com alto risco**, reforçando ações preventivas e diagnósticos mais assertivos.
 
-📊 Dataset
-O estudo utiliza o "Cardiovascular Disease dataset" disponível no Kaggle: https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset.
+---
 
-Este conjunto de dados contém:
+## 🎯 Objetivo do Projeto
 
-Mais de 70.000 registros de pacientes.
+As doenças cardiovasculares estão entre as principais causas de morte no mundo. A detecção precoce e a prevenção são fundamentais para reduzir esse impacto. Este projeto propõe a aplicação de algoritmos de Aprendizado de Máquina para:
 
-11 variáveis clínicas relevantes, como idade, peso, pressão arterial, níveis de colesterol e glicose, gênero, histórico de tabagismo e consumo de álcool, e nível de atividade física.
+- Analisar dados clínicos estruturados
+- Prever a probabilidade de ocorrência de doenças cardíacas
+- Suportar decisões médicas com uma ferramenta inteligente e acessível
 
-Uma variável-alvo binária (cardio) que indica a presença (1) ou ausência (0) de doença cardiovascular.
+---
 
-📈 Resultados Iniciais
-Para a previsão, um modelo Random Forest foi treinado e avaliado. Alcançamos uma acurácia geral de 73% no conjunto de teste.
+## 📊 Dataset Utilizado
 
-Aqui estão os detalhes da performance:
+O modelo foi treinado com o [Cardiovascular Disease Dataset do Kaggle](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset), que contém:
 
-Matriz de Confusão
-[[8387 2364]
- [3201 7048]]
-Verdadeiros Negativos (TN): 8387 (pacientes sem doença cardíaca corretamente classificados).
+- ✅ 70.000+ registros de pacientes
+- ✅ 11 variáveis clínicas (idade, peso, colesterol, glicose, pressão arterial, etc.)
+- ✅ 1 variável-alvo binária (`cardio`: 0 - sem doença, 1 - com doença)
 
-Falsos Positivos (FP): 2364 (pacientes sem doença cardíaca classificados incorretamente como tendo a doença).
+---
 
-Falsos Negativos (FN): 3201 (pacientes com doença cardíaca classificados incorretamente como não tendo a doença).
+## ⚙️ Modelagem e Resultados
 
-Verdadeiros Positivos (TP): 7048 (pacientes com doença cardíaca corretamente classificados).
+Foi utilizado o algoritmo **Random Forest**, que obteve **73% de acurácia** no conjunto de testes.
 
-Relatório de Classificação
-Classe
-
-Precisão
-
-Recall
-
-F1-Score
-
-0 (Sem Doença)
-
-0.72
-
-0.78
-
-0.75
-
-1 (Com Doença)
-
-0.75
-
-0.69
-
-0.72
+### 🔢 Matriz de Confusão
+[[8387 2364] [3201 7048]]
 
 
-Exportar para as Planilhas
-O modelo demonstra um bom desempenho geral. Contudo, a presença de 3201 Falsos Negativos (pacientes com doença cardíaca não detectada) é um ponto crítico em diagnósticos médicos. Apesar disso, a performance é satisfatória para uma aplicação inicial e mostra grande potencial como ferramenta auxiliar no diagnóstico precoce.
+| Métrica              | Valor |
+|----------------------|-------|
+| Verdadeiros Negativos (TN) | 8387 |
+| Falsos Positivos (FP)      | 2364 |
+| Falsos Negativos (FN)      | 3201 |
+| Verdadeiros Positivos (TP) | 7048 |
 
-💡 Conclusões e Próximos Passos
-Este estudo inicial valida a aplicação do aprendizado de máquina para prever o risco de doenças cardíacas. Um ponto crucial que aprendemos é a necessidade crítica de dados de alta qualidade. Inconsistências observadas em variáveis como 'Pressão sanguínea' ressaltam que a limpeza e validação dos dados são pré-requisitos indispensáveis para construir modelos preditivos confiáveis na área da saúde.
+### 📊 Relatório de Classificação
 
-Para aprimorar o projeto, os próximos passos incluem:
+| Classe | Precisão | Recall | F1-Score |
+|--------|----------|--------|----------|
+| 0 (Sem Doença) | 0.72 | 0.78 | 0.75 |
+| 1 (Com Doença) | 0.75 | 0.69 | 0.72 |
 
-Tratamento de Outliers e Inconsistências: Implementar métodos mais robustos para lidar com valores anômalos, especialmente nas variáveis de pressão arterial.
+> 💡 Observação: Os 3201 falsos negativos representam um desafio crítico em aplicações médicas, reforçando a importância de ajustes futuros no modelo.
 
-Engenharia de Features: Criar novas características a partir das existentes (ex: Índice de Massa Corporal - IMC) para melhorar o poder preditivo do modelo.
+---
 
-Otimização de Hiperparâmetros: Ajustar os parâmetros do modelo Random Forest e explorar a otimização de outros modelos como XGBoost e Redes Neurais para maximizar a performance.
+## 🛠️ Próximos Passos
 
-Exploração de Outros Modelos: Realizar uma análise mais aprofundada e comparativa com Regressão Logística, Support Vector Machine (SVM), XGBoost e Redes Neurais Artificiais.
+Para aprimorar a performance e confiabilidade do modelo, serão exploradas as seguintes melhorias:
 
-Interpretabilidade do Modelo: Utilizar técnicas como SHAP ou LIME para entender quais características são mais importantes nas previsões do modelo, aumentando a confiança e a transparência.
+- 🔍 **Tratamento de Outliers e Inconsistências**
+- 🧠 **Engenharia de Features** (ex: cálculo de IMC)
+- ⚙️ **Otimização de Hiperparâmetros**
+- 🔄 **Comparação com Outros Algoritmos** (SVM, XGBoost, Redes Neurais)
+- 🌐 **Explicabilidade do Modelo** com ferramentas como SHAP ou LIME
 
+---
+
+## 📌 Conclusão
+
+Este projeto demonstra o potencial do uso de Machine Learning como ferramenta auxiliar na área da saúde. Apesar das limitações iniciais, como a alta taxa de falsos negativos, os resultados indicam um caminho promissor rumo à **inovação em diagnóstico médico**. Contribuições e melhorias são bem-vindas!
+
+---
+
+## 📬 Contato
+
+Para dúvidas, sugestões ou colaboração, entre em contato com [Seu Nome ou Equipe].
+
+---
