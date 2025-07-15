@@ -1,67 +1,77 @@
-# CardioVascularDetect
-Previsão de Risco de Doença Cardíaca Utilizando Aprendizado de Máquina
-
-Este repositório contém um projeto abrangente focado na previsão do risco de doenças cardiovasculares utilizando técnicas de Aprendizado de Máquina (Machine Learning). O objetivo é desenvolver e avaliar modelos preditivos que possam auxiliar profissionais da saúde no diagnóstico precoce e na identificação de pacientes em alto risco.
+CardioVascularDetect: Previsão de Risco de Doença Cardíaca com Machine Learning
+Este repositório contém um projeto focado em utilizar Aprendizado de Máquina (Machine Learning) para prever o risco de doenças cardiovasculares. Nosso objetivo é desenvolver e avaliar modelos preditivos que possam auxiliar profissionais da saúde no diagnóstico precoce e na identificação de pacientes em alto risco.
 
 🎯 Objetivo do Projeto
-As doenças cardiovasculares são uma das principais causas de mortalidade global. A prevenção e o diagnóstico precoce são ferramentas essenciais para a saúde pública. Este projeto visa aplicar algoritmos de Machine Learning para analisar dados clínicos e prever se um paciente tem alto risco de desenvolver uma doença cardíaca, oferecendo uma ferramenta de apoio robusta para decisões clínicas.
+As doenças cardiovasculares são uma das principais causas de mortalidade global. A prevenção e o diagnóstico precoce são ferramentas essenciais para a saúde pública. Este projeto visa aplicar algoritmos de Machine Learning para analisar dados clínicos e prever se um paciente tem um alto risco de desenvolver uma doença cardíaca, oferecendo assim uma ferramenta de apoio robusta para decisões clínicas.
 
 📊 Dataset
-O estudo utiliza o dataset "Cardiovascular Disease dataset" (link: https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset) disponível no Kaggle. Este conjunto de dados contém:
+O estudo utiliza o "Cardiovascular Disease dataset" disponível no Kaggle: https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset.
 
-+70.000 registros de pacientes.
+Este conjunto de dados contém:
 
-11 variáveis clínicas (idade, peso, pressão arterial, colesterol, glicose, gênero, fumante, consumo de álcool, atividade física, etc.).
+Mais de 70.000 registros de pacientes.
 
-Uma variável-alvo binária (cardio) indicando a presença (1) ou ausência (0) de doença cardiovascular.
+11 variáveis clínicas relevantes, como idade, peso, pressão arterial, níveis de colesterol e glicose, gênero, histórico de tabagismo e consumo de álcool, e nível de atividade física.
 
-📈 Resultados
-O modelo Random Forest alcançou uma acurácia geral de 73% no conjunto de teste.
+Uma variável-alvo binária (cardio) que indica a presença (1) ou ausência (0) de doença cardiovascular.
 
-Matriz de Confusão:
+📈 Resultados Iniciais
+Para a previsão, um modelo Random Forest foi treinado e avaliado. Alcançamos uma acurácia geral de 73% no conjunto de teste.
 
+Aqui estão os detalhes da performance:
+
+Matriz de Confusão
 [[8387 2364]
  [3201 7048]]
-Verdadeiros Negativos (TN): 8387 (pacientes sem doença cardíaca corretamente classificados)
+Verdadeiros Negativos (TN): 8387 (pacientes sem doença cardíaca corretamente classificados).
 
-Falsos Positivos (FP): 2364 (pacientes sem doença cardíaca classificados incorretamente como tendo)
+Falsos Positivos (FP): 2364 (pacientes sem doença cardíaca classificados incorretamente como tendo a doença).
 
-Falsos Negativos (FN): 3201 (pacientes com doença cardíaca classificados incorretamente como não tendo)
+Falsos Negativos (FN): 3201 (pacientes com doença cardíaca classificados incorretamente como não tendo a doença).
 
-Verdadeiros Positivos (TP): 7048 (pacientes com doença cardíaca corretamente classificados)
+Verdadeiros Positivos (TP): 7048 (pacientes com doença cardíaca corretamente classificados).
 
-Relatório de Classificação:
+Relatório de Classificação
+Classe
 
-Classe 0 (Sem Doença Cardíaca):
+Precisão
 
-Precisão: 0.72
+Recall
 
-Recall: 0.78
+F1-Score
 
-F1-Score: 0.75
+0 (Sem Doença)
 
-Classe 1 (Com Doença Cardíaca):
+0.72
 
-Precisão: 0.75
+0.78
 
-Recall: 0.69
+0.75
 
-F1-Score: 0.72
+1 (Com Doença)
 
-O modelo demonstra um bom desempenho geral. É importante notar a presença de Falsos Negativos (3201 casos), que representam pacientes com doença cardíaca não detectada, um ponto crítico em diagnósticos médicos. No entanto, a performance é satisfatória para uma aplicação inicial e tem potencial como ferramenta auxiliar no diagnóstico precoce.
+0.75
+
+0.69
+
+0.72
+
+
+Exportar para as Planilhas
+O modelo demonstra um bom desempenho geral. Contudo, a presença de 3201 Falsos Negativos (pacientes com doença cardíaca não detectada) é um ponto crítico em diagnósticos médicos. Apesar disso, a performance é satisfatória para uma aplicação inicial e mostra grande potencial como ferramenta auxiliar no diagnóstico precoce.
 
 💡 Conclusões e Próximos Passos
-Este estudo demonstra a viabilidade do uso de aprendizado de máquina para prever o risco de doenças cardíacas. Um ponto crucial que emergiu da análise exploratória foi a necessidade crítica de dados de alta qualidade. Inconsistências em variáveis como 'Pressão sanguínea' ressaltam que a limpeza e validação de dados são pré-requisitos indispensáveis para a construção de modelos preditivos confiáveis na área da saúde.
+Este estudo inicial valida a aplicação do aprendizado de máquina para prever o risco de doenças cardíacas. Um ponto crucial que aprendemos é a necessidade crítica de dados de alta qualidade. Inconsistências observadas em variáveis como 'Pressão sanguínea' ressaltam que a limpeza e validação dos dados são pré-requisitos indispensáveis para construir modelos preditivos confiáveis na área da saúde.
 
-Próximos passos podem incluir:
+Para aprimorar o projeto, os próximos passos incluem:
 
 Tratamento de Outliers e Inconsistências: Implementar métodos mais robustos para lidar com valores anômalos, especialmente nas variáveis de pressão arterial.
 
-Engenharia de Features: Criar novas features a partir das existentes que possam melhorar o poder preditivo do modelo (ex: BMI = peso / (altura em m)^2).
+Engenharia de Features: Criar novas características a partir das existentes (ex: Índice de Massa Corporal - IMC) para melhorar o poder preditivo do modelo.
 
-Otimização de Hiperparâmetros: Ajustar os hiperparâmetros do modelo Random Forest (ou de outros modelos como XGBoost e Redes Neurais, que foram mencionados na introdução mas não detalhados no código fornecido) para maximizar a performance.
+Otimização de Hiperparâmetros: Ajustar os parâmetros do modelo Random Forest e explorar a otimização de outros modelos como XGBoost e Redes Neurais para maximizar a performance.
 
-Exploração de Outros Modelos: Aprofundar a análise com os outros modelos mencionados (Regressão Logística, SVM, XGBoost, Rede Neural Artificial) e comparar seus resultados de forma mais exaustiva.
+Exploração de Outros Modelos: Realizar uma análise mais aprofundada e comparativa com Regressão Logística, Support Vector Machine (SVM), XGBoost e Redes Neurais Artificiais.
 
-Interpretabilidade do Modelo: Utilizar técnicas como SHAP ou LIME para entender quais features são mais importantes nas predições do modelo.
+Interpretabilidade do Modelo: Utilizar técnicas como SHAP ou LIME para entender quais características são mais importantes nas previsões do modelo, aumentando a confiança e a transparência.
 
